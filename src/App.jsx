@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+function Home() {
+ return <h1>Page principale</h1>;
+}
+function AlbumList() {
+ return <h1>Liste des albums</h1>;
+}
+function AlbumDetail() {
+ return <h1>Details des albums</h1>;
+}
+function GenreList() {
+ return <h1>Liste des genres</h1>;
+}
+function GenreDetail() {
+ return <h1>Details des genres</h1>;
+}
+function ArtistList() {
+ return <h1>Liste des artistes</h1>;
+}
+function ArtistDetail() {
+ return <h1>Detail des artistes</h1>;
+}
+function Search() {
+ return <h1>Recherche</h1>;
 }
 
-export default App
+function App() {
+ return (
+  <Router>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/albums" element={<AlbumList />} />
+        <Route path="/albums/:id" element={<AlbumDetail />} />
+        <Route path="/genres" element={<GenreList />} />
+        <Route path="/genres/:id" element={<GenreDetail />} />
+        <Route path="/artists" element={<ArtistList />} />
+        <Route path="/artists/:id" element={<ArtistDetail />} />
+        <Route path="/search" element={<Search />} />
+      </Routes>
+    </div>
+</Router>
+ );
+}
+
+export default App;
+
