@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+.genre-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.genre-list-container h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.genre-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  column-gap: 64px;
+  row-gap: 32px;
+}
+
+.genre-card {
+  background-color: #181818;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+  text-align: left;
+  word-wrap: break-word;
+  overflow: hidden;
+  width: 170px;
+  height: 150px;
+  box-sizing: border-box;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.genre-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.genre-card:hover {
+  transform: scale(1.05);
+}
+
+.genre-card:hover::before {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.genre-card-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.genre-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap: break-word;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.genre-card p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #b3b3b3;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.genre-card[data-genre="Classical"],
+.genre-card[data-genre="classical"] {
+  background-image: url("/classical.jpg");
+}
+
+.genre-card[data-genre="New Age"],
+.genre-card[data-genre="new age"] {
+  background-image: url("/newAge.jpg");
+}
+
+.genre-card[data-genre="Electronica"],
+.genre-card[data-genre="electronica"] {
+  background-image: url("/electronica.jpg");
+}
+
+.genre-card[data-genre="World"],
+.genre-card[data-genre="world"] {
+  background-image: url("/world.jpg");
+}
+
+.genre-card[data-genre="Ambient"],
+.genre-card[data-genre="ambient"] {
+  background-image: url("/ambient.jpg");
+}
+
+.genre-card[data-genre="Jazz"],
+.genre-card[data-genre="jazz"] {
+  background-image: url("/jazz.jpg");
+}
+
+.genre-card[data-genre="Hip Hop"],
+.genre-card[data-genre="hip hop"] {
+  background-image: url("/hiphop.jpg");
+}
+
+.genre-card[data-genre="Alt Rock"],
+.genre-card[data-genre="alt rock"] {
+  background-image: url("/altRock.jpg");
+}
+
+.genre-card[data-genre="Electro Rock"],
+.genre-card[data-genre="electro rock"] {
+  background-image: url("/electroRock.jpg");
+}
+
+.genre-card[data-genre="Hard Rock"],
+.genre-card[data-genre="hard rock"] {
+  background-image: url("/hardRock.jpg");
+}
+
+.genre-card:not([data-genre]) {
+  background-image: url("/default.png");
+}
+
+@media (max-width: 1024px) {
+  .genre-grid {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+
+  .genre-card {
+    width: 160px;
+    height: 140px;
+    padding: 12px;
+  }
+
+  .genre-card h3 {
+    font-size: 14px;
+    max-width: 140px;
+  }
+
+  .genre-card p {
+    font-size: 12px;
+    max-height: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .genre-list-container {
+    padding: 16px;
+  }
+
+  .genre-list-container h1 {
+    font-size: 20px;
+  }
+
+  .genre-grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 16px;
+    row-gap: 16px;
+  }
+
+  .genre-card {
+    width: 140px;
+    height: 120px;
+    padding: 10px;
+  }
+
+  .genre-card h3 {
+    font-size: 14px;
+  }
+
+  .genre-card p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .genre-list-container {
+    padding: 12px;
+  }
+
+  .genre-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 12px;
+    row-gap: 12px;
+  }
+
+  .genre-card {
+    width: 130px;
+    height: 110px;
+    padding: 8px;
+  }
+
+  .genre-card h3 {
+    font-size: 13px;
+    max-width: 120px;
+  }
+
+  .genre-card p {
+    font-size: 11px;
+  }
+}

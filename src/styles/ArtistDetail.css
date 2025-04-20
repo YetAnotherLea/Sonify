@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+.artist-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.artist-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.artist-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.artist-info {
+  flex: 1;
+}
+
+.artist-info h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.artist-info p {
+  font-size: 16px;
+  color: #b3b3b3;
+  margin: 0 0 12px 0;
+  overflow: auto;
+}
+
+.artist-bio {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #e0e0e0;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  max-width: 800px;
+  padding: 16px 20px;
+  background-color: #282828;
+  border-radius: 8px;
+  border-left: 4px solid #1db954;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  max-height: 100px;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.3s ease;
+}
+
+.artist-bio.expanded {
+  max-height: 1000px;
+}
+
+.bio-toggle {
+  background-color: #1db954;
+  color: #ffffff;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  position: absolute;
+  bottom: -15px;
+  right: 20px;
+  z-index: 2;
+  transition: background-color 0.2s;
+}
+
+.bio-toggle:hover {
+  background-color: #1ed760;
+}
+
+.artist-bio:not(.expanded)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(transparent, #282828);
+}
+
+.artist-detail-container h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 32px 0 16px 0;
+}
+
+.album-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  column-gap: 64px;
+  row-gap: 0;
+}
+
+.album-card {
+  background-color: #181818;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.2s ease;
+  text-align: left;
+  word-wrap: break-word;
+  overflow: hidden;
+  width: 170px;
+  height: 250px;
+  max-height: 300px;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+}
+
+.album-card:hover {
+  background-color: #282828;
+}
+
+.album-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.album-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.album-card p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #b3b3b3;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 20px;
+}
+
+.artist-error,
+.artist-loading,
+.artist-not-found {
+  margin-left: 240px;
+  padding: 24px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+  .album-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .artist-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .artist-info h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .artist-detail-container {
+    padding: 16px;
+    margin-left: 0;
+  }
+
+  .artist-error,
+  .artist-loading,
+  .artist-not-found {
+    margin-left: 0;
+  }
+
+  .artist-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .artist-image {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .album-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .album-card {
+    padding: 10px;
+    max-height: 240px;
+  }
+
+  .album-card img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .artist-detail-container {
+    padding: 12px;
+  }
+
+  .artist-info h1 {
+    font-size: 24px;
+  }
+
+  .album-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .album-card {
+    padding: 8px;
+    max-height: 220px;
+  }
+
+  .album-card img {
+    height: 100px;
+  }
+}

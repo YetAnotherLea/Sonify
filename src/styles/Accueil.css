@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+.accueil-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.welcome-section {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.welcome-section h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.welcome-section p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #b3b3b3;
+  margin: 0;
+}
+
+.featured-albums h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.random-album-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 64px;
+  row-gap: 0;
+}
+
+.featured-album-card {
+  background-color: #181818;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.2s ease;
+  text-align: left;
+  word-wrap: break-word;
+  overflow: hidden;
+  width: 170px;
+  height: 250px;
+  max-height: 300px;
+  box-sizing: border-box;
+}
+
+.featured-album-card:hover {
+  background-color: #282828;
+}
+
+.album-cover img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.album-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.album-info p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #b3b3b3;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 20px;
+}
+
+.more-albums {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.view-all-button {
+  background-color: #1db954;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.view-all-button:hover {
+  background-color: #1ed760;
+  color: #ffffff;
+}
+
+.loading, .error-message {
+  text-align: center;
+  padding: 40px;
+  font-size: 16px;
+  color: #b3b3b3;
+}
+
+.error-message {
+  color: #f15e6c;
+}
+
+@media (max-width: 1024px) {
+  .random-album-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .featured-album-card {
+    padding: 12px;
+    max-height: 260px;
+  }
+
+  .album-cover img {
+    height: 140px;
+  }
+
+  .album-info h3 {
+    font-size: 14px;
+    max-height: 22px;
+  }
+
+  .album-info p {
+    font-size: 12px;
+    max-height: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .accueil-container {
+    padding: 16px;
+  }
+
+  .welcome-section h1 {
+    font-size: 24px;
+  }
+
+  .featured-albums h2 {
+    font-size: 20px;
+  }
+
+  .random-album-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .featured-album-card {
+    padding: 10px;
+    max-height: 240px;
+  }
+
+  .album-cover img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .accueil-container {
+    padding: 12px;
+  }
+
+  .random-album-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .featured-album-card {
+    padding: 8px;
+    max-height: 220px;
+  }
+
+  .album-cover img {
+    height: 100px;
+  }
+}
