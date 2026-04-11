@@ -35,7 +35,7 @@ function GenreDetail() {
         const albumCount = response.albums ? response.albums.length : 0;
         setTotalPages(Math.max(1, Math.ceil(albumCount / limit)));
       } catch (err) {
-        setError("Impossible de charger les informations du genre");
+        setError("Impossible de charger les informations du genre", err);
       }
     };
 
@@ -64,7 +64,7 @@ function GenreDetail() {
         setAlbums(validAlbums);
         await fetchArtists(validAlbums);
       } catch (err) {
-        setError("Impossible de charger les albums");
+        setError("Impossible de charger les albums", err);
       } finally {
         setLoading(false);
       }
@@ -72,7 +72,9 @@ function GenreDetail() {
 
     if (albumIds.length > 0) {
       fetchAlbumsForPage();
-    }
+    }      console.log("hello there")
+
+    
   }, [albumIds, page]);
 
   const fetchArtists = async (albumsData) => {
@@ -95,7 +97,7 @@ function GenreDetail() {
       const res = await getArtistById(id);
       return { id, name: res.name || "Artiste inconnu" };
     } catch (err) {
-      return { id, name: "Artiste inconnu" };
+      return { id, name: "Artiste inconnu", err};
     }
   };
 

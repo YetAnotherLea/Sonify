@@ -1,7 +1,10 @@
-version: "3"
 services:
   api:
-    image: matfire/spotitech
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    security_opt:
+      - seccomp:unconfined
     environment:
       - DB_HOST=db
       - DB_PORT=3306
@@ -14,9 +17,12 @@ services:
     image: mysql
     volumes:
       - ./my_spotify_db.sql:/docker-entrypoint-initdb.d/dump.sql
-      - ./data/:/var/lib/mysql
+      - db_data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=toor
       - MYSQL_DATABASE=spotify
       - MYSQL_USER=spoty
       - MYSQL_PASSWORD=spotypwd
+
+volumes :
+  db_data:

@@ -11,10 +11,6 @@ import Search from "./pages/Search";
 import TestAPI from "./pages/TestAPI";
 import "./App.css";
 
-function Home() {
-  return <h1>Page d'accueil</h1>;
-}
-
 function App() {
   return (
     <Router>
@@ -37,5 +33,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;

@@ -3,9 +3,7 @@ import axios from "axios";
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 export const getAlbums = async (page, limit) => {
-  const response = await axios.get(
-    `${API_URL}/albums?page=${page}&limit=${limit}`
-  );
+  const response = await axios.get(`${API_URL}/albums?page=${page}&limit=${limit}`);
   return response.data;
 };
 
