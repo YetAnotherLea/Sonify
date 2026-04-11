@@ -51,6 +51,34 @@ L'application est accessible sur : `http://localhost:5173`
 
 ---
 
+## Architecture
+
+```
+src/
+├── api/
+│   └── api.js          # Fonctions d'appel à l'API REST (albums, artistes, genres, pistes, recherche)
+├── components/
+│   └── Navbar.jsx      # Barre de navigation principale
+├── pages/
+│   ├── Genres/
+│   │   ├── GenreList.jsx
+│   │   └── GenreDetail.jsx
+│   ├── Accueil.jsx
+│   ├── AlbumList.jsx
+│   ├── AlbumDetail.jsx
+│   ├── ArtistList.jsx
+│   ├── ArtistDetail.jsx
+│   ├── Search.jsx
+│   └── TestAPI.jsx
+├── styles/
+├── App.jsx             # Routing principal
+└── main.jsx            # Point d'entrée
+```
+
+L'URL de l'API est configurable via la variable d'environnement `VITE_API_URL` (par défaut : `http://localhost:8000`).
+
+---
+
 ## Fonctionnalités
 
 ### Accueil
