@@ -21,8 +21,8 @@ Lecteur multimédia en ligne développé dans le cadre d'un projet Epitech Web A
 ### 1. Cloner le dépôt
 
 ```bash
-git clone git@github.com:EpitechWebAcademiePromo2026/W-WEB-090-MAR-1-1-spotify-stefan-paris.paduraru.git
-cd W-WEB-090-MAR-1-1-spotify-stefan-paris.paduraru
+git clone git@github.com:YetAnotherLea/Sonify.git
+cd Sonify
 ```
 
 ### 2. Lancer l'API avec Docker
