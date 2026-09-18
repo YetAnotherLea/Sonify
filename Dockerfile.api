@@ -1,6 +1,0 @@
-FROM node:20
-WORKDIR /usr/src/app
-COPY spotitech_package.json ./package.json
-COPY spotitech_node_modules ./node_modules
-COPY spotitech_dist ./dist
-CMD ["node", "dist/main"]

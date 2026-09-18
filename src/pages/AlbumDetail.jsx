@@ -18,12 +18,12 @@ function AlbumDetail() {
       try {
         setLoading(true);
 
-        // Preia albumul și pistele
+        // Album et pistes
         const albumData = await getAlbumById(id);
         setAlbum(albumData.album);
         setTracks(albumData.tracks || []);
 
-        // Preia artistul
+        // Artiste
         const artistData = await getArtistById(albumData.album.artist_id);
         setArtist(artistData);
       } catch (err) {
@@ -43,7 +43,7 @@ function AlbumDetail() {
       setCurrentTrack(null);
     } else {
       setCurrentTrack(track);
-      audioRef.current.src = track.mp3; // Modificat din track.audio în track.mp3
+      audioRef.current.src = track.mp3;
       audioRef.current
         .play()
         .catch((err) => console.error("Erreur lecture:", err));

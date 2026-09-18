@@ -8,7 +8,6 @@ import Accueil from "./pages/Accueil";
 import ArtistDetail from "./pages/ArtistDetail";
 import AlbumDetail from "./pages/AlbumDetail";
 import Search from "./pages/Search";
-import TestAPI from "./pages/TestAPI";
 import "./App.css";
 
 function App() {
@@ -26,7 +25,6 @@ function App() {
             <Route path="/artists" element={<ArtistList />} />
             <Route path="/artists/:id" element={<ArtistDetail />} />
             <Route path="/search" element={<Search />} />
-            <Route path="/test-api" element={<TestAPI />} />
           </Routes>
         </div>
       </div>

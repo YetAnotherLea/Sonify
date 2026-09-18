@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getArtists, getArtistById } from "../api/api";
+import { getArtists } from "../api/api";
 import "../styles/ArtistList.css";
 
 function ArtistList() {
   const [artists, setArtists] = useState([]);
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(100);
+  const totalPages = 100;
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const limit = 10;
@@ -18,9 +18,6 @@ function ArtistList() {
         const response = await getArtists(page, limit);
 
         const artistsData = Array.isArray(response) ? response : response.artists || [];
-
-        artistsData.forEach(artist => {
-        });
 
         setArtists(artistsData);
       } catch (err) {
