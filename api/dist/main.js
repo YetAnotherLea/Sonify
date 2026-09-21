@@ -12,7 +12,13 @@ async function bootstrap() {
         .build();
     const document = swagger_1.SwaggerModule.createDocument(app, config);
     swagger_1.SwaggerModule.setup('api', app, document);
-    app.enableCors();
+    // En prod le front est sur la même origine : CORS_ORIGIN vide désactive les en-têtes
+    if (process.env.CORS_ORIGIN !== undefined) {
+        app.enableCors({ origin: process.env.CORS_ORIGIN || false });
+    }
+    else {
+        app.enableCors();
+    }
     await app.listen(process.env.PORT ?? 3000, process.env.HOST ?? '0.0.0.0');
 }
 bootstrap();
